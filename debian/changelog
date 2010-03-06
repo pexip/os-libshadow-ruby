@@ -1,0 +1,92 @@
+libshadow-ruby (1.4.1-8build1) lucid; urgency=low
+
+  * rebuild rest of main for armel armv7/thumb2 optimization;
+    UbuntuSpec:mobile-lucid-arm-gcc-v7-thumb2
+
+ -- Alexander Sack <asac@ubuntu.com>  Sat, 06 Mar 2010 13:37:02 +0100
+
+libshadow-ruby (1.4.1-8) unstable; urgency=medium
+
+  * applied patch from Kostas Georgiou (the Fedora maintainer for
+    shadow-ruby) to shadow.c: rb_struct_new expects NULL (!=0) for
+    termination.  Thanks: Matthew Palmer.  (closes: 425234)
+
+ -- akira yamada <akira@debian.org>  Fri, 05 Oct 2007 09:25:23 +0900
+
+libshadow-ruby (1.4.1-7) unstable; urgency=low
+
+  * dropped ruby1.6 support. (Closes: #367914)
+
+ -- akira yamada <akira@debian.org>  Tue, 23 May 2006 15:19:48 +0900
+
+libshadow-ruby (1.4.1-6) unstable; urgency=low
+
+  * build with ruby1.6 and ruby1.8. (closes: #212268)
+  * renamed to libshadow-ruby1.6 from libshadow-ruby.
+  * updated description. (closes: #210091)
+
+ -- akira yamada <akira@debian.org>  Thu, 11 Dec 2003 15:20:56 +0900
+
+libshadow-ruby (1.4.1-5) unstable; urgency=low
+
+  * rebuild with correct version of libruby.
+
+ -- akira yamada <akira@debian.org>  Sun, 16 Sep 2001 14:14:22 +0900
+
+libshadow-ruby (1.4.1-4) unstable; urgency=low
+
+  * removed incorrect dependency in Makefile, closes: #111409.
+
+ -- akira yamada <akira@debian.org>  Sun,  9 Sep 2001 10:21:13 +0900
+
+libshadow-ruby (1.4.1-3) unstable; urgency=low
+
+  * debian/rules: libdir and archdir is bad value when using 
+    ruby 1.6.4 or later. fixed it, closes: #107718.
+
+ -- akira yamada <akira@debian.org>  Fri, 24 Aug 2001 15:34:07 +0900
+
+libshadow-ruby (1.4.1-2) unstable; urgency=low
+
+  * rebuild with ruby_1.6.2-5.
+
+ -- akira yamada <akira@debian.org>  Thu, 25 Jan 2001 22:59:02 +0900
+
+libshadow-ruby (1.4.1-1) unstable; urgency=low
+
+  * Upgraded to new upstream version.
+  * Updated Standards-Version to 3.2.1.
+  * Added Build-Depends field into control file.
+
+ -- akira yamada <akira@debian.org>  Fri,  1 Sep 2000 18:10:49 +0900
+
+libshadow-ruby (1.4-3) unstable; urgency=low
+
+  * Rebuild with ruby_1.4.4.
+
+ -- akira yamada <akira@debian.org>  Tue,  4 Apr 2000 21:08:08 +0900
+
+libshadow-ruby (1.4-2) unstable; urgency=low
+
+  * FHS complience.
+
+ -- akira yamada <akira@debian.org>  Thu, 21 Oct 1999 23:09:06 +0900
+
+libshadow-ruby (1.4-1) unstable; urgency=low
+
+  * Upgraded to new upstream version.
+
+ -- akira yamada <akira@debian.org>  Fri, 27 Aug 1999 11:48:25 +0900
+
+ruby-shadow-module (1.2-2) unstable; urgency=low
+
+  * Build with ruby1.2_1.2.2.
+
+ -- akira yamada <akira@linux.or.jp>  Mon,  1 Feb 1999 14:53:55 +0900
+
+ruby-shadow-module (1.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- akira yamada <akira@linux.or.jp>  Fri, 22 Jan 1999 18:28:47 +0900
+

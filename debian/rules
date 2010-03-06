@@ -1,0 +1,81 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; -*-
+# Sample debian/rules that uses debhelper. GNU copyright 1997 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This is the debhelper compatability version to use.
+#export DH_COMPAT=3
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+	# Add here commands to compile the package.
+	rm -rf build-tree-1.8
+	mkdir  build-tree-1.8
+
+	ruby1.8 -C build-tree-1.8 ../extconf.rb
+	$(MAKE) -C build-tree-1.8
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp install-stamp
+
+	# Add here commands to clean up after the build process.
+	-rm -rf build-tree-1.8
+
+	dh_clean
+
+install: install-stamp
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# Add here commands to install the package into debian/tmp.
+	#$(MAKE) prefix=`pwd`/debian/tmp/usr install
+	$(MAKE) -C build-tree-1.8 sitedir=$(CURDIR)/debian/libshadow-ruby1.8/usr/lib/ruby install
+
+	touch install-stamp
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+#	dh_testversion
+	dh_testdir
+	dh_testroot
+	dh_installdocs -A HISTORY README*
+#	dh_installexamples
+#	dh_installmenu
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installinit
+#	dh_installcron
+#	dh_installmanpages
+#	dh_undocumented
+	dh_installchangelogs
+	dh_link
+	dh_strip
+	dh_compress -X.rb -X.pl -X.py -X.scm -X.awk -X.dat
+	dh_fixperms
+#	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+source diff:
+	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

@@ -1,0 +1,15 @@
+Source: libshadow-ruby
+Section: interpreters
+Priority: optional
+Maintainer: akira yamada <akira@debian.org>
+Build-Depends: debhelper (>> 3), ruby1.8, ruby1.8-dev
+Standards-Version: 3.6.1
+
+Package: libshadow-ruby1.8
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Interface of shadow password for Ruby 1.8
+ This is a module which used when you access Linux shadow password files
+ from Ruby.
+ .
+ This package provides library files for Ruby 1.8.
