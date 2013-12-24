@@ -1,9 +1,11 @@
 Source: libshadow-ruby
 Section: interpreters
 Priority: optional
-Maintainer: akira yamada <akira@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: akira yamada <akira@debian.org>
 Build-Depends: debhelper (>> 3), ruby1.8, ruby1.8-dev
 Standards-Version: 3.6.1
+XS-Pexip-Upstream: http://archive.ubuntu.com/ubuntu/ precise
 
 Package: libshadow-ruby1.8
 Architecture: any

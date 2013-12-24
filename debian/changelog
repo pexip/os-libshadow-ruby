@@ -1,3 +1,9 @@
+libshadow-ruby (1.4.1-8build1pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 24 Dec 2013 21:58:19 +0000
+
 libshadow-ruby (1.4.1-8build1) lucid; urgency=low
 
   * rebuild rest of main for armel armv7/thumb2 optimization;
